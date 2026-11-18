@@ -1,0 +1,2172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2: Listening and Speaking - Page 141 (Exercises 1 & 2)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Fredoka & Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Fredoka', 'Cairo', sans-serif;
+            background-color: #f6fbf9;
+            background-image: 
+                radial-gradient(#bbf7d0 1.2px, transparent 1.2px), 
+                radial-gradient(#fde68a 1.2px, #f6fbf9 1.2px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+            overflow-x: hidden;
+        }
+
+        .en-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .ar-font {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        /* التظليل الجذاب الثابت عند القراءة (بدون حركة أو اهتزاز) */
+        .static-attractive-highlight {
+            background: linear-gradient(180deg, #dcfce7 0%, #86efac 100%) !important;
+            border-color: #059669 !important;
+            box-shadow: 0 4px 0 #059669, 0 0 0 3.5px #34d399 !important;
+            color: #064e3b !important;
+        }
+
+        /* تمييز السؤال النشط أثناء تشغيل المقطع الصوتي الكامل */
+        .audio-active-question {
+            border-color: #ec4899 !important;
+            background-color: #fdf2f8 !important;
+            box-shadow: 0 4px 0 #db2777, 0 0 0 3px #fbcfe8 !important;
+        }
+
+        /* صفوف الأسئلة في التمرين الأول */
+        .question-block {
+            border: 2.5px solid #e2e8f0;
+            border-radius: 22px;
+            background: #ffffff;
+            padding: 14px 16px;
+            transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .question-block.solved {
+            border-color: #10b981;
+            box-shadow: 0 4px 0 #059669;
+        }
+
+        /* بطاقة الصورة (a, b, c) في التمرين الأول */
+        .pic-option-card {
+            position: relative;
+            border: 3px solid #cbd5e1;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #f8fafc;
+            cursor: pointer;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+        .pic-option-card:hover {
+            border-color: #38bdf8;
+        }
+        .pic-option-card.checked-correct {
+            border-color: #059669 !important;
+            box-shadow: 0 0 0 3px #6ee7b7, 0 4px 0 #059669 !important;
+        }
+        .pic-option-card.checked-wrong {
+            border-color: #f43f5e !important;
+            box-shadow: 0 0 0 3px #fecdd3, 0 4px 0 #e11d48 !important;
+        }
+
+        /* شارة الحرف الوردية (a, b, c) أعلى يسار كل صورة */
+        .pink-letter-badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 9999px;
+            background: #ffffff;
+            border: 2.5px solid #db2777;
+            color: #db2777;
+            font-weight: 900;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        /* مربع علامة الصح (✓) أسفل يمين كل صورة كما في الكتاب */
+        .check-square {
+            width: 30px;
+            height: 30px;
+            border-radius: 7px;
+            background: #ffffff;
+            border: 2.5px solid #84cc16;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.15rem;
+            color: #0284c7;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+            transition: all 0.15s ease;
+        }
+        .pic-option-card.checked-correct .check-square {
+            background: #ecfeff;
+            border-color: #059669;
+            color: #0284c7;
+        }
+        .pic-option-card.checked-wrong .check-square {
+            background: #fff1f2;
+            border-color: #e11d48;
+            color: #e11d48;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between text-slate-800">
+
+    <!-- الشريط العلوي -->
+    <nav class="bg-white/95 backdrop-blur-md border-b-2 border-emerald-200 sticky top-0 z-40 px-3 sm:px-4 py-2.5 shadow-sm">
+        <div class="max-w-6xl mx-auto flex items-center justify-center sm:justify-between gap-2 flex-wrap">
+            <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-teal-600 animate-pulse"></span>
+                <span class="font-black text-teal-900 text-sm sm:text-base">Unit 2: Chores • Listening &amp; Speaking (Page 141)</span>
+            </div>
+
+            <div class="flex items-center gap-2 flex-wrap justify-center">
+                <!-- زر تبديل السرعة -->
+                <button type="button" onclick="toggleSpeechRate()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded-xl text-xs sm:text-sm font-bold text-slate-700 flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-gauge-high text-teal-600"></i>
+                    <span id="speedDisplay">هادئ وتعليمي (0.78x)</span>
+                </button>
+
+                <!-- زر إظهار الحلول الكاملة -->
+                <button type="button" onclick="toggleAllPageAnswers()" id="showAllAnswersBtn" class="px-3.5 py-1.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-xs sm:text-sm font-black shadow flex items-center gap-1.5 transition active:scale-95">
+                    <i class="fa-solid fa-key"></i>
+                    <span>إظهار جميع الحلول</span>
+                </button>
+
+                <!-- زر حفظ الملف بالصور والصوت دائماً -->
+                <button type="button" id="saveHtmlWithMediaBtn" onclick="downloadPageWithSavedMedia()" class="hidden px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs sm:text-sm font-black shadow flex items-center gap-1.5 transition active:scale-95">
+                    <i class="fa-solid fa-floppy-disk text-amber-300"></i>
+                    <span class="ar-font">حفظ نسخة GitHub بالصوت المدمج دائماً</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي لصفحة 141 -->
+    <main class="max-w-6xl w-full mx-auto px-3 sm:px-4 py-5 flex-grow">
+
+        <!-- ترويسة الصفحة: Listening and Speaking + الكائن الأزرق الدائري اللطيف -->
+        <header class="relative mb-6 text-center select-none flex flex-col items-center justify-center">
+            <div class="relative inline-flex items-center justify-center mb-2">
+                <!-- الكائن الأزرق الدائري اللطيف كما في أعلى صفحة 141 -->
+                <div class="w-16 h-16 sm:w-20 sm:h-20 -mr-3 z-10 drop-shadow-md">
+                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                        <circle cx="50" cy="54" r="32" fill="#0ea5e9" stroke="#0369a1" stroke-width="3"/>
+                        <ellipse cx="42" cy="44" rx="16" ry="11" fill="#38bdf8" opacity="0.55"/>
+                        <circle cx="40" cy="44" r="6.5" fill="#ffffff" stroke="#0369a1" stroke-width="1.5"/>
+                        <circle cx="41" cy="44" r="3.2" fill="#0f172a"/>
+                        <circle cx="60" cy="44" r="6.5" fill="#ffffff" stroke="#0369a1" stroke-width="1.5"/>
+                        <circle cx="59" cy="44" r="3.2" fill="#0f172a"/>
+                        <path d="M43 58 Q50 65 57 58" stroke="#0f172a" stroke-width="3" stroke-linecap="round" fill="none"/>
+                        <ellipse cx="16" cy="50" rx="6" ry="4" fill="#38bdf8" stroke="#0369a1" stroke-width="2"/>
+                        <ellipse cx="84" cy="50" rx="6" ry="4" fill="#38bdf8" stroke="#0369a1" stroke-width="2"/>
+                        <ellipse cx="38" cy="86" rx="7" ry="4" fill="#0284c7"/>
+                        <ellipse cx="62" cy="86" rx="7" ry="4" fill="#0284c7"/>
+                    </svg>
+                </div>
+                <!-- شريط Listening and Speaking الأخضر الداكن كما في الكتاب -->
+                <div class="bg-[#1b7a6e] text-white px-7 sm:px-9 py-2.5 rounded-3xl font-black text-xl sm:text-4xl shadow-lg border-b-4 border-[#115e59] flex items-center justify-center gap-3">
+                    <span>Listening and Speaking</span>
+                </div>
+            </div>
+
+            <div class="inline-flex items-center justify-center gap-2 bg-teal-800 text-white px-6 py-1.5 rounded-2xl font-black text-base sm:text-xl shadow border-2 border-teal-950">
+                <span>🎧</span>
+                <span>Unit 2: Chores • Workbook Page 141</span>
+                <span>🗣️</span>
+            </div>
+
+            <!-- روابط سريعة للتمرينين -->
+            <div class="flex items-center justify-center gap-2.5 mt-3 flex-wrap">
+                <a href="#ex1-section" class="bg-white hover:bg-teal-50 text-teal-900 border-2 border-teal-600 px-4 py-1 rounded-full text-xs sm:text-sm font-black shadow-2xs transition">
+                    1. Listen and Check (✓) (1-5)
+                </a>
+                <a href="#ex2-section" class="bg-white hover:bg-teal-50 text-teal-900 border-2 border-teal-600 px-4 py-1 rounded-full text-xs sm:text-sm font-black shadow-2xs transition">
+                    2. Choose a Picture &amp; Write
+                </a>
+            </div>
+        </header>
+
+        <!-- ======================================================================= -->
+        <!-- EXERCISE 1: Listen and check (✓) (Questions 1 to 5)                     -->
+        <!-- ======================================================================= -->
+        <section id="ex1-section" class="mb-8 bg-white rounded-3xl p-4 sm:p-6 border-3 border-teal-600 shadow-xl">
+            <div class="flex flex-col items-center justify-center text-center gap-2.5 mb-5 pb-4 border-b-2 border-slate-100">
+                <div class="flex flex-wrap items-center justify-center gap-2.5">
+                    <span class="w-8 h-8 rounded-full bg-teal-700 text-white font-black text-lg flex items-center justify-center shadow-sm">1</span>
+                    <button type="button" onclick="toggleBuiltInAudioTrack()" class="px-3 py-1 rounded-full bg-teal-100 hover:bg-teal-200 text-teal-900 font-black text-xs flex items-center gap-1.5 border border-teal-300 shadow-2xs transition cursor-pointer" title="تشغيل أو إيقاف المقطع الصوتي 2.1">
+                        <i class="fa-solid fa-headphones text-teal-700"></i>
+                        <span>2.1</span>
+                        <i id="badgePlayIcon" class="fa-solid fa-play text-[10px] text-teal-700"></i>
+                    </button>
+                    <h2 class="text-lg sm:text-2xl font-black text-slate-900">
+                        Listen and check (<span class="text-sky-600">✓</span>).
+                    </h2>
+                </div>
+
+                <!-- مشغل المقطع الصوتي الأصلي (2.1.mp3) المدمج والمحفوظ للعمل على GitHub دون تغيير -->
+                <div id="builtInAudioWrapper" class="w-full max-w-3xl bg-gradient-to-r from-pink-50 via-rose-50 to-amber-50 border-2 border-pink-300 rounded-2xl p-3 shadow-sm flex flex-col gap-2.5">
+                    <!-- عنصر الصوت الأصلي 2.1.mp3 -->
+                    <audio id="exact-mp3-audio-player" preload="auto" class="hidden"></audio>
+
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <!-- زر التشغيل / الإيقاف المؤقت الرئيسي -->
+                            <button type="button" id="mainAudioPlayBtn" onclick="toggleBuiltInAudioTrack()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-black text-xs sm:text-sm shadow flex items-center gap-2 transition active:scale-95">
+                                <i id="mainAudioPlayIcon" class="fa-solid fa-play"></i>
+                                <span id="mainAudioPlayText" class="ar-font">تشغيل المقطع الصوتي (2.1)</span>
+                            </button>
+
+                            <!-- زر الإيقاف الكامل وإعادة البداية -->
+                            <button type="button" onclick="stopBuiltInAudioTrack()" title="إيقاف وإعادة للبداية" class="w-9 h-9 rounded-xl bg-white hover:bg-rose-100 text-rose-700 border border-pink-300 flex items-center justify-center text-xs sm:text-sm shadow-2xs transition active:scale-95">
+                                <i class="fa-solid fa-stop"></i>
+                            </button>
+                        </div>
+
+                        <!-- شارة الحالة والوقت -->
+                        <div class="flex items-center gap-2 flex-wrap justify-center">
+                            <span id="audioStatusPill" dir="rtl" class="ar-font text-xs font-extrabold text-pink-800 bg-white/90 border border-pink-200 px-3 py-1 rounded-full">
+                                🎧 المقطع الصوتي 2.1 جاهز عند النقر
+                            </span>
+                            <span id="audioTimeDisplay" class="en-font text-xs font-black text-slate-600 bg-white px-2.5 py-1 rounded-lg border border-slate-200">
+                                00:00 / 02:20
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- شريط التقدم التفاعلي -->
+                    <div onclick="seekBuiltInAudio(event)" title="انقر للتنقل داخل المقطع الصوتي" class="w-full h-3 bg-white rounded-full border border-pink-200 overflow-hidden cursor-pointer relative shadow-inner">
+                        <div id="audioProgressFill" class="h-full bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 rounded-full transition-all duration-200" style="width: 0%;"></div>
+                    </div>
+
+                    <!-- أزرار الانتقال السريع لأجزاء المقطع الصوتي + إظهار/إخفاء النص -->
+                    <div class="flex flex-wrap items-center justify-between gap-2 pt-0.5">
+                        <div class="flex items-center gap-1.5 flex-wrap">
+                            <span dir="rtl" class="ar-font text-[11px] font-bold text-slate-600 ml-1">انتقل إلى:</span>
+                            <button type="button" onclick="playBuiltInFromSegment(0)" class="seg-jump-btn px-2.5 py-0.5 rounded-lg bg-white hover:bg-pink-100 text-pink-800 border border-pink-200 text-xs font-black transition">المقدمة</button>
+                            <button type="button" onclick="playBuiltInFromSegment(1)" class="seg-jump-btn px-2.5 py-0.5 rounded-lg bg-white hover:bg-pink-100 text-pink-800 border border-pink-200 text-xs font-black transition">سؤال 1</button>
+                            <button type="button" onclick="playBuiltInFromSegment(2)" class="seg-jump-btn px-2.5 py-0.5 rounded-lg bg-white hover:bg-pink-100 text-pink-800 border border-pink-200 text-xs font-black transition">سؤال 2</button>
+                            <button type="button" onclick="playBuiltInFromSegment(3)" class="seg-jump-btn px-2.5 py-0.5 rounded-lg bg-white hover:bg-pink-100 text-pink-800 border border-pink-200 text-xs font-black transition">سؤال 3</button>
+                            <button type="button" onclick="playBuiltInFromSegment(4)" class="seg-jump-btn px-2.5 py-0.5 rounded-lg bg-white hover:bg-pink-100 text-pink-800 border border-pink-200 text-xs font-black transition">سؤال 4</button>
+                            <button type="button" onclick="playBuiltInFromSegment(5)" class="seg-jump-btn px-2.5 py-0.5 rounded-lg bg-white hover:bg-pink-100 text-pink-800 border border-pink-200 text-xs font-black transition">سؤال 5</button>
+                        </div>
+
+                        <button type="button" id="toggleScriptBtn" onclick="toggleAudioScriptBox()" class="px-2.5 py-0.5 rounded-lg bg-white hover:bg-amber-100 text-amber-800 border border-amber-300 text-xs font-bold ar-font transition">
+                            <i class="fa-solid fa-closed-captioning ml-1"></i>
+                            <span id="toggleScriptText">إظهار نص الحوار</span>
+                        </button>
+                    </div>
+
+                    <!-- صندوق نص الحوار المباشر (اختياري للمعلم) -->
+                    <div id="liveAudioScriptBox" class="hidden bg-white/95 border border-pink-200 rounded-xl px-3.5 py-2 text-center">
+                        <span id="liveScriptSpeaker" class="text-[11px] font-black uppercase tracking-wider text-pink-600 block">Track 2.1</span>
+                        <p id="liveScriptEn" class="en-font font-bold text-sm sm:text-base text-slate-800">Click Play to listen to the conversation.</p>
+                        <p id="liveScriptAr" dir="rtl" class="ar-font font-bold text-xs sm:text-sm text-teal-700 mt-0.5">انقر على زر التشغيل للاستماع إلى المحادثة.</p>
+                    </div>
+
+                    <!-- شريط تثبيت ملف 2.1.mp3 داخل الصفحة وتنزيل نسخة GitHub المستقلة -->
+                    <div id="githubEmbedNoticeBar" dir="rtl" class="bg-white/95 border border-indigo-200 rounded-xl px-3 py-2 flex flex-wrap items-center justify-center gap-2 text-xs">
+                        <span id="githubAudioSourceLabel" class="ar-font font-extrabold text-indigo-900">
+                            <i class="fa-solid fa-circle-info text-indigo-600 ml-1"></i>
+                            لتثبيت نفس ملف <strong>2.1.mp3</strong> داخل الصفحة (حتى يعمل بنفس الصوت تماماً عند رفعه على GitHub):
+                        </span>
+                        <label for="upload-audio-ex1" class="cursor-pointer px-3 py-1 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-lg shadow-2xs flex items-center gap-1.5 transition active:scale-95">
+                            <i class="fa-solid fa-file-audio text-amber-300"></i>
+                            <span class="ar-font">اختر ملف 2.1.mp3 لتثبيته بالداخل</span>
+                        </label>
+                        <button type="button" id="quickDownloadGithubBtn" onclick="downloadPageWithSavedMedia()" class="hidden px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-lg shadow-2xs flex items-center gap-1.5 transition active:scale-95">
+                            <i class="fa-solid fa-download"></i>
+                            <span class="ar-font">تنزيل ملف GitHub الجاهز بالصوت</span>
+                        </button>
+                    </div>
+                </div>
+
+                <p dir="rtl" class="ar-font text-xs sm:text-sm font-extrabold text-teal-700 bg-teal-50 px-3.5 py-1 rounded-full border border-teal-200">
+                    انظر إلى الصور وضع علامة (✓) عند الإجابة الصحيحة • (لا تُقرأ الجملة إلا بعد الإجابة مع تظليل ثابت جذاب وظهور الترجمة العربية)
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-2 mt-1">
+                    <!-- زر اختياري لتحديث ملف الصوت -->
+                    <label for="upload-audio-ex1" class="cursor-pointer px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 font-bold text-xs rounded-xl flex items-center gap-1.5 transition">
+                        <i class="fa-solid fa-file-audio text-pink-600"></i>
+                        <span class="ar-font">تحديد / تحديث ملف 2.1.mp3</span>
+                    </label>
+                    <input type="file" id="upload-audio-ex1" accept="audio/*" class="hidden" onchange="handleEx1AudioUpload(event)" />
+
+                    <span id="ex1ScoreBadge" class="bg-emerald-50 text-emerald-800 border border-emerald-300 px-3 py-1 rounded-xl font-black text-xs">
+                        النتيجة: 0 / 5 ⭐
+                    </span>
+                    <button type="button" onclick="revealEx1Answers()" class="px-3 py-1 bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs rounded-xl border border-amber-300 transition">
+                        إظهار إجابات التمرين 1 👁️
+                    </button>
+                    <button type="button" onclick="resetEx1Answers()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl border border-slate-300 transition">
+                        إعادة التمرين 1 🔄
+                    </button>
+                </div>
+            </div>
+
+            <!-- قائمة الأسئلة الخمسة (1 إلى 5) مع الصور الثلاث (a, b, c) لكل سؤال -->
+            <div id="ex1QuestionsList" class="flex flex-col gap-5 max-w-5xl mx-auto">
+                <!-- يتم توليدها برمجياً -->
+            </div>
+        </section>
+
+        <!-- ======================================================================= -->
+        <!-- EXERCISE 2: Choose a picture from Exercise 1. Write two sentences       -->
+        <!-- ======================================================================= -->
+        <section id="ex2-section" class="mb-8 bg-white rounded-3xl p-4 sm:p-6 border-3 border-teal-600 shadow-xl">
+            <div class="flex flex-col items-center justify-center text-center gap-2 mb-5 pb-3 border-b-2 border-slate-100">
+                <div class="flex flex-wrap items-center justify-center gap-2.5">
+                    <span class="w-8 h-8 rounded-full bg-teal-700 text-white font-black text-lg flex items-center justify-center shadow-sm">2</span>
+                    <h2 class="text-lg sm:text-2xl font-black text-slate-900">
+                        Choose a picture from Exercise 1. Write two sentences about it.
+                    </h2>
+                </div>
+                <p dir="rtl" class="ar-font text-xs sm:text-sm font-extrabold text-teal-700 bg-teal-50 px-3.5 py-1 rounded-full border border-teal-200">
+                    اختر صورة من التمرين ١ واكتب جملتين عنها • (اختر من الأزرار المقترحة أو اكتب إجابتك واستمع إليها بالتظليل الثابت والترجمة العربية)
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-2 mt-1">
+                    <button type="button" onclick="fillSampleEx2Answer()" class="px-3 py-1 bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs rounded-xl border border-amber-300 transition">
+                        إدراج إجابة نموذجية 💡
+                    </button>
+                    <button type="button" onclick="resetEx2Answer()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl border border-slate-300 transition">
+                        مسح الإجابة 🔄
+                    </button>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div id="ex2-card-box" class="p-5 sm:p-6 rounded-2xl border-2 border-slate-200 bg-slate-50/70 transition text-center flex flex-col items-center">
+                    <div class="flex flex-wrap items-center justify-center gap-3 mb-3 w-full">
+                        <span class="en-font text-xl sm:text-2xl md:text-3xl font-black text-slate-800">
+                            In this picture, ...
+                        </span>
+                        <button type="button" onclick="speakEx2Answer()" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm sm:text-base flex items-center gap-2 shadow-xs transition active:scale-95">
+                            <i class="fa-solid fa-volume-high"></i>
+                            <span class="ar-font">اقرأ إجابتي</span>
+                        </button>
+                    </div>
+
+                    <!-- أزرار سريعة لاختيار وصف إحدى صور التمرين الأول -->
+                    <div class="flex flex-wrap items-center justify-center gap-2 mb-4 w-full">
+                        <span class="text-sm sm:text-base font-black text-teal-800 mr-1">Choose One:</span>
+                        <button type="button" onclick="setEx2Sentence(0)" class="px-3.5 py-1.5 bg-white hover:bg-teal-50 text-sky-700 border-2 border-sky-200 rounded-full text-sm sm:text-base font-extrabold transition shadow-2xs">Picture 1c (Friends in the park)</button>
+                        <button type="button" onclick="setEx2Sentence(1)" class="px-3.5 py-1.5 bg-white hover:bg-teal-50 text-sky-700 border-2 border-sky-200 rounded-full text-sm sm:text-base font-extrabold transition shadow-2xs">Picture 2b (Cooking show)</button>
+                        <button type="button" onclick="setEx2Sentence(2)" class="px-3.5 py-1.5 bg-white hover:bg-teal-50 text-sky-700 border-2 border-sky-200 rounded-full text-sm sm:text-base font-extrabold transition shadow-2xs">Picture 3c (Waking up at 9:00)</button>
+                        <button type="button" onclick="setEx2Sentence(3)" class="px-3.5 py-1.5 bg-white hover:bg-teal-50 text-sky-700 border-2 border-sky-200 rounded-full text-sm sm:text-base font-extrabold transition shadow-2xs">Picture 4c (Riding bikes)</button>
+                        <button type="button" onclick="setEx2Sentence(4)" class="px-3.5 py-1.5 bg-white hover:bg-teal-50 text-sky-700 border-2 border-sky-200 rounded-full text-sm sm:text-base font-extrabold transition shadow-2xs">Picture 5b (Cleaning the yard)</button>
+                    </div>
+
+                    <!-- الإطار الفارغ والمفتوح بخط كبير ومتوسط -->
+                    <textarea
+                        id="ex2-input"
+                        rows="2"
+                        oninput="updateEx2Translation()"
+                        class="w-full bg-white border-b-3 border-2 border-teal-400 focus:border-teal-700 rounded-2xl px-4 py-3 en-font font-black text-xl sm:text-2xl text-teal-900 text-center outline-none shadow-inner transition resize-none leading-relaxed"
+                    ></textarea>
+
+                    <!-- الترجمة باللغة العربية أسفل الإطار مباشرة -->
+                    <div id="ex2-ar-box" dir="rtl" class="w-full ar-font text-lg sm:text-xl font-black text-teal-800 bg-teal-50/90 border-2 border-teal-200 px-5 py-2.5 rounded-2xl mt-3 text-center shadow-2xs transition">
+                        الترجمة: (اختر صورة من الأزرار أعلاه أو اكتب جملتين لتظهر ترجمتهما باللغة العربية هنا)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- شارة رقم الصفحة 141 أسفل التمرين (في المنتصف تماماً) -->
+        <div class="mt-8 mb-4 flex items-center justify-center">
+            <div class="relative group select-none">
+                <div class="absolute -inset-1.5 bg-gradient-to-r from-teal-400 via-amber-400 to-pink-500 rounded-3xl blur-md opacity-70"></div>
+                <div class="relative bg-gradient-to-b from-white to-amber-50/90 border-3 border-teal-600 rounded-2xl px-6 py-2.5 sm:px-8 sm:py-3 shadow-lg flex items-center justify-center gap-3 sm:gap-4">
+                    <div class="w-11 h-11 sm:w-13 sm:h-13 rounded-xl bg-gradient-to-br from-pink-500 via-rose-500 to-pink-600 text-white flex items-center justify-center font-black text-xl sm:text-2xl shadow-md border-2 border-white">
+                        2
+                    </div>
+                    <div class="text-center leading-tight flex flex-col items-center justify-center">
+                        <span class="en-font font-black text-lg sm:text-xl text-teal-800 tracking-wide block text-center">
+                            PAGE <span class="text-rose-500">141</span>
+                        </span>
+                        <span dir="rtl" class="text-xs sm:text-sm font-bold text-amber-700 ar-font block text-center">
+                            📖 صفحة ١٤١ • الاستماع والتحدث (التمرين ١ و ٢)
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- التنبيه الصوتي الحي -->
+    <div id="liveReadingToast" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-slate-900/95 backdrop-blur-md text-white px-5 py-2.5 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 transition-all duration-300 opacity-0 pointer-events-none translate-y-8 max-w-[94vw]">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping flex-shrink-0"></div>
+        <div class="truncate">
+            <span class="text-[11px] text-slate-400 block font-sans" id="toastSpeakerLabel">Reading calmly:</span>
+            <span id="toastWord" class="en-font font-black text-amber-300 text-base sm:text-lg tracking-wide">...</span>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-white/90 border-t border-emerald-200 mt-8 py-5 px-4 text-center text-xs text-slate-600">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p class="font-bold">
+                Unit 2: Chores • Listening and Speaking Page 141 (Exercises 1 &amp; 2)
+            </p>
+            <div class="flex items-center gap-2">
+                <span class="bg-indigo-50 text-indigo-800 px-3 py-1 rounded-full font-bold border border-indigo-200 flex items-center gap-1.5">
+                    <i class="fa-solid fa-headset text-indigo-600"></i>
+                    <span id="footerSpeakerName">Calm English Teacher</span>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // =====================================================================
+        // 0. المقطع الصوتي الأصلي (2.1.mp3) والتوقيتات الدقيقة والحوار الكامل
+        // =====================================================================
+        const exactSegmentTimestamps = [
+            { qId: 0, start: 0,   label: "Narrator • Intro",   en: "Unit 2. Listening and Speaking, page 141. Exercise 1. Listen and check.", ar: "الوحدة الثانية: الاستماع والتحدث، صفحة 141. التمرين الأول: استمع وضع علامة صح." },
+            { qId: 1, start: 12,  label: "Question 1",         en: "1. What does the girl do after school?", ar: "١. ماذا تفعل الفتاة بعد المدرسة؟" },
+            { qId: 2, start: 37,  label: "Question 2",         en: "2. What TV show is the boy watching?", ar: "٢. ما البرنامج التلفزيوني الذي يشاهده الولد؟" },
+            { qId: 3, start: 59,  label: "Question 3",         en: "3. What time does Penelope wake up on weekends?", ar: "٣. في أي وقت تستيقظ بينيلوبي في عطلة نهاية الأسبوع؟" },
+            { qId: 4, start: 85,  label: "Question 4",         en: "4. How do the boys get home after school?", ar: "٤. كيف يعود الأولاد إلى المنزل بعد المدرسة؟" },
+            { qId: 5, start: 113, label: "Question 5",         en: "5. What do the boy's grandparents need help with?", ar: "٥. ما الشيء الذي يحتاج أجداد الولد المساعدة فيه؟" }
+        ];
+
+        const builtInTrack2_1 = [
+            {
+                qId: 0,
+                role: "narrator",
+                speakerLabel: "Narrator • Intro",
+                en: "Unit 2. Listening and Speaking, page 141. Exercise 1. Listen and check.",
+                ar: "الوحدة الثانية: الاستماع والتحدث، صفحة 141. التمرين الأول: استمع وضع علامة صح.",
+                pauseAfter: 600
+            },
+            {
+                qId: 1,
+                role: "narrator",
+                speakerLabel: "Question 1 • Narrator",
+                en: "1. What does the girl do after school?",
+                ar: "١. ماذا تفعل الفتاة بعد المدرسة؟",
+                pauseAfter: 450
+            },
+            {
+                qId: 1,
+                role: "girl2",
+                speakerLabel: "Question 1 • Friend",
+                en: "What do you do every day after school?",
+                ar: "ماذا تفعلين كل يوم بعد المدرسة؟",
+                pauseAfter: 300
+            },
+            {
+                qId: 1,
+                role: "girl1",
+                speakerLabel: "Question 1 • Girl",
+                en: "I usually do my homework.",
+                ar: "عادةً ما أقوم بواجبي المنزلي.",
+                pauseAfter: 300
+            },
+            {
+                qId: 1,
+                role: "girl2",
+                speakerLabel: "Question 1 • Friend",
+                en: "But that doesn't take you hours. What do you do when you finish it?",
+                ar: "لكن ذلك لا يستغرق ساعات. ماذا تفعلين عندما تنتهين منه؟",
+                pauseAfter: 300
+            },
+            {
+                qId: 1,
+                role: "girl1",
+                speakerLabel: "Question 1 • Girl",
+                en: "It depends. I often play computer games or go to the park with my sister.",
+                ar: "يعتمد ذلك على اليوم. غالباً ألعب ألعاب الكمبيوتر أو أذهب إلى الحديقة مع أختي.",
+                pauseAfter: 700
+            },
+            {
+                qId: 2,
+                role: "narrator",
+                speakerLabel: "Question 2 • Narrator",
+                en: "2. What TV show is the boy watching?",
+                ar: "٢. ما البرنامج التلفزيوني الذي يشاهده الولد؟",
+                pauseAfter: 450
+            },
+            {
+                qId: 2,
+                role: "girl2",
+                speakerLabel: "Question 2 • Mom / Sister",
+                en: "What are you doing?",
+                ar: "ماذا تفعل؟",
+                pauseAfter: 300
+            },
+            {
+                qId: 2,
+                role: "boy1",
+                speakerLabel: "Question 2 • Boy",
+                en: "I'm watching a TV show. It's really interesting.",
+                ar: "أشاهد برنامجاً تلفزيونياً. إنه ممتع حقاً.",
+                pauseAfter: 300
+            },
+            {
+                qId: 2,
+                role: "girl2",
+                speakerLabel: "Question 2 • Mom / Sister",
+                en: "What is it about?",
+                ar: "عمّ يتحدث؟",
+                pauseAfter: 300
+            },
+            {
+                qId: 2,
+                role: "boy1",
+                speakerLabel: "Question 2 • Boy",
+                en: "It's about a family and the things they do to help other people.",
+                ar: "إنه عن عائلة والأشياء التي تفعلها لمساعدة الآخرين.",
+                pauseAfter: 700
+            },
+            {
+                qId: 3,
+                role: "narrator",
+                speakerLabel: "Question 3 • Narrator",
+                en: "3. What time does Penelope wake up on weekends?",
+                ar: "٣. في أي وقت تستيقظ بينيلوبي في عطلة نهاية الأسبوع؟",
+                pauseAfter: 450
+            },
+            {
+                qId: 3,
+                role: "girl2",
+                speakerLabel: "Question 3 • Friend",
+                en: "Do you wake up early on weekends?",
+                ar: "هل تستيقظين مبكراً في عطلات نهاية الأسبوع؟",
+                pauseAfter: 300
+            },
+            {
+                qId: 3,
+                role: "girl1",
+                speakerLabel: "Question 3 • Penelope",
+                en: "No, never! I wake up at eleven o'clock. But I like to stay in bed and read.",
+                ar: "لا، أبداً! أستيقظ في الساعة الحادية عشرة. لكني أحب البقاء في السرير والقراءة.",
+                pauseAfter: 300
+            },
+            {
+                qId: 3,
+                role: "girl2",
+                speakerLabel: "Question 3 • Friend",
+                en: "Do you stay in bed all day?",
+                ar: "هل تبقين في السرير طوال اليوم؟",
+                pauseAfter: 300
+            },
+            {
+                qId: 3,
+                role: "girl1",
+                speakerLabel: "Question 3 • Penelope",
+                en: "No, I don't.",
+                ar: "لا، لا أفعل.",
+                pauseAfter: 700
+            },
+            {
+                qId: 4,
+                role: "narrator",
+                speakerLabel: "Question 4 • Narrator",
+                en: "4. How do the boys get home after school?",
+                ar: "٤. كيف يعود الأولاد إلى المنزل بعد المدرسة؟",
+                pauseAfter: 450
+            },
+            {
+                qId: 4,
+                role: "girl2",
+                speakerLabel: "Question 4 • Girl",
+                en: "Are you and your brother catching the bus home after school?",
+                ar: "هل ستركب أنت وأخوك الحافلة إلى المنزل بعد المدرسة؟",
+                pauseAfter: 300
+            },
+            {
+                qId: 4,
+                role: "boy1",
+                speakerLabel: "Question 4 • Boy",
+                en: "No, we aren't. We're playing soccer at school after classes.",
+                ar: "لا، لن نفعل. سنلعب كرة القدم في المدرسة بعد الحصص.",
+                pauseAfter: 300
+            },
+            {
+                qId: 4,
+                role: "girl2",
+                speakerLabel: "Question 4 • Girl",
+                en: "How do you get home after soccer?",
+                ar: "كيف تعودون إلى المنزل بعد كرة القدم؟",
+                pauseAfter: 300
+            },
+            {
+                qId: 4,
+                role: "boy1",
+                speakerLabel: "Question 4 • Boy",
+                en: "My dad usually comes in the car and takes us home.",
+                ar: "عادةً يأتي أبي بالسيارة ويأخذنا إلى المنزل.",
+                pauseAfter: 700
+            },
+            {
+                qId: 5,
+                role: "narrator",
+                speakerLabel: "Question 5 • Narrator",
+                en: "5. What do the boy's grandparents need help with?",
+                ar: "٥. ما الشيء الذي يحتاج أجداد الولد المساعدة فيه؟",
+                pauseAfter: 450
+            },
+            {
+                qId: 5,
+                role: "dad",
+                speakerLabel: "Question 5 • Dad",
+                en: "Can you come with me to your grandparents?",
+                ar: "هل يمكنك أن تأتي معي إلى بيت أجدادك؟",
+                pauseAfter: 300
+            },
+            {
+                qId: 5,
+                role: "boy1",
+                speakerLabel: "Question 5 • Boy",
+                en: "What do we need to do?",
+                ar: "ماذا نحتاج أن نفعل؟",
+                pauseAfter: 300
+            },
+            {
+                qId: 5,
+                role: "dad",
+                speakerLabel: "Question 5 • Dad",
+                en: "Clean their yard. They're getting old, and it's difficult for them to do it.",
+                ar: "تنظيف فناء منزلهم. لقد كبروا في السن، وأصبح من الصعب عليهم القيام بذلك.",
+                pauseAfter: 300
+            },
+            {
+                qId: 5,
+                role: "boy1",
+                speakerLabel: "Question 5 • Boy",
+                en: "Can we go after breakfast?",
+                ar: "هل يمكننا الذهاب بعد الإفطار؟",
+                pauseAfter: 300
+            },
+            {
+                qId: 5,
+                role: "dad",
+                speakerLabel: "Question 5 • Dad",
+                en: "Yes, that's fine.",
+                ar: "نعم، هذا مناسب.",
+                pauseAfter: 400
+            }
+        ];
+
+        // حالة تشغيل المقطع الصوتي الأصلي 2.1.mp3
+        let exactMp3Ready = false;
+        let exactMp3SourceType = 'none'; // 'embedded' | 'file' | 'none'
+
+        // حالة تشغيل المقطع الصوتي المدمج الاحتياطي
+        let trackState = {
+            isPlaying: false,
+            isPaused: false,
+            currentIndex: 0,
+            runId: 0,
+            timerId: null
+        };
+
+        // =====================================================================
+        // 1. بيانات التمرين الأول: Listen and check (✓) (Questions 1 to 5)
+        // =====================================================================
+        const ex1Questions = [
+            {
+                id: 1,
+                question: "What does the girl do after school?",
+                questionAr: "ماذا تفعل الفتاة بعد المدرسة؟",
+                correct: "c",
+                userChoice: null,
+                options: [
+                    {
+                        letter: "a",
+                        spokenAnswer: "She looks at flowers in the garden after school.",
+                        ar: "هي تنظر إلى الزهور في الحديقة بعد المدرسة.",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#bbf7d0"/>
+                            <rect x="0" y="120" width="280" height="45" fill="#4ade80"/>
+                            <circle cx="150" cy="54" r="22" fill="#fed7aa"/>
+                            <path d="M126 48 Q150 20 174 48 Z" fill="#92400e"/>
+                            <rect x="122" y="76" width="56" height="52" rx="10" fill="#7e22ce"/>
+                            <line x1="150" y1="92" x2="150" y2="128" stroke="#15803d" stroke-width="3"/>
+                            <circle cx="150" cy="88" r="7" fill="#ffffff" stroke="#eab308" stroke-width="2"/>
+                        </svg>`
+                    },
+                    {
+                        letter: "b",
+                        spokenAnswer: "She sits on the sofa and watches TV after school.",
+                        ar: "هي تجلس على الأريكة وتشاهد التلفاز بعد المدرسة.",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#ede9fe"/>
+                            <rect x="20" y="75" width="240" height="75" rx="14" fill="#581c87"/>
+                            <circle cx="135" cy="54" r="20" fill="#fed7aa"/>
+                            <path d="M115 48 Q135 24 155 48 Z" fill="#1e293b"/>
+                            <rect x="112" y="74" width="48" height="45" rx="8" fill="#fde047"/>
+                            <ellipse cx="205" cy="112" rx="28" ry="14" fill="#84cc16"/>
+                        </svg>`
+                    },
+                    {
+                        letter: "c",
+                        spokenAnswer: "She meets and plays with her friend in the park after school.",
+                        ar: "هي تلتقي وتلعب مع صديقتها في الحديقة بعد المدرسة.",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#fef3c7"/>
+                            <rect x="0" y="122" width="280" height="43" fill="#84cc16"/>
+                            <!-- Girl 1 -->
+                            <circle cx="122" cy="54" r="19" fill="#fed7aa"/>
+                            <path d="M102 48 Q122 24 142 48 Z" fill="#f472b6"/>
+                            <rect x="102" y="74" width="40" height="55" rx="8" fill="#facc15"/>
+                            <!-- Girl 2 hugging -->
+                            <circle cx="156" cy="58" r="18" fill="#fed7aa"/>
+                            <path d="M138 52 Q156 30 174 52 Z" fill="#db2777"/>
+                            <rect x="138" y="76" width="40" height="52" rx="8" fill="#fb7185"/>
+                        </svg>`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                question: "What TV show is the boy watching?",
+                questionAr: "ما البرنامج التلفزيوني الذي يشاهده الولد؟",
+                correct: "b",
+                userChoice: null,
+                options: [
+                    {
+                        letter: "a",
+                        spokenAnswer: "He is watching a TV show about serving food and helping people.",
+                        ar: "هو يشاهد برنامجاً عن تقديم الطعام ومساعدة الناس.",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#ecfccb"/>
+                            <rect x="0" y="118" width="280" height="47" fill="#94a3b8"/>
+                            <circle cx="85" cy="48" r="18" fill="#fed7aa"/>
+                            <rect x="65" y="68" width="42" height="50" rx="6" fill="#22c55e"/>
+                            <ellipse cx="145" cy="122" rx="34" ry="14" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+                            <circle cx="205" cy="54" r="18" fill="#fed7aa"/>
+                            <rect x="185" y="74" width="44" height="46" rx="6" fill="#d97706"/>
+                        </svg>`
+                    },
+                    {
+                        letter: "b",
+                        spokenAnswer: "He is watching a cooking show on TV.",
+                        ar: "هو يشاهد برنامج طبخ في التلفاز.",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#e2e8f0"/>
+                            <!-- Chef Hat -->
+                            <path d="M92 34 Q115 12 138 34 L134 48 L96 48 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+                            <circle cx="115" cy="60" r="18" fill="#fed7aa"/>
+                            <rect x="88" y="80" width="54" height="65" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+                            <!-- Studio Camera -->
+                            <rect x="175" y="65" width="75" height="52" rx="6" fill="#1e293b"/>
+                            <rect x="190" y="75" width="45" height="32" fill="#bae6fd"/>
+                        </svg>`
+                    },
+                    {
+                        letter: "c",
+                        spokenAnswer: "He is watching an outdoor adventure show.",
+                        ar: "هو يشاهد برنامج مغامرات في الطبيعة.",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#bae6fd"/>
+                            <!-- Rope bridge -->
+                            <line x1="0" y1="115" x2="280" y2="140" stroke="#475569" stroke-width="4"/>
+                            <line x1="0" y1="130" x2="280" y2="155" stroke="#334155" stroke-width="5"/>
+                            <circle cx="155" cy="55" r="14" fill="#fed7aa"/>
+                            <rect x="143" y="70" width="24" height="34" rx="5" fill="#f8fafc"/>
+                            <rect x="145" y="102" width="20" height="24" rx="3" fill="#0284c7"/>
+                        </svg>`
+                    }
+                ]
+            },
+            {
+                id: 3,
+                question: "What time does Penelope wake up on weekends?",
+                questionAr: "في أي وقت تستيقظ بينيلوبي في عطلة نهاية الأسبوع؟",
+                correct: "c",
+                userChoice: null,
+                options: [
+                    {
+                        letter: "a",
+                        spokenAnswer: "She wakes up at seven o'clock on weekends.",
+                        ar: "تستيقظ في الساعة السابعة صباحاً (7:00).",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#f8fafc"/>
+                            <ellipse cx="140" cy="115" rx="95" ry="40" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+                            <!-- Teddy bear & girl -->
+                            <circle cx="105" cy="85" r="22" fill="#b45309"/>
+                            <circle cx="155" cy="82" r="22" fill="#fed7aa"/>
+                            <!-- Clock 7:00 -->
+                            <circle cx="242" cy="34" r="24" fill="#ffffff" stroke="#1e3a8a" stroke-width="3.5"/>
+                            <line x1="242" y1="34" x2="242" y2="16" stroke="#1e3a8a" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="242" y1="34" x2="230" y2="46" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+                        </svg>`
+                    },
+                    {
+                        letter: "b",
+                        spokenAnswer: "She wakes up at eight o'clock on weekends.",
+                        ar: "تستيقظ في الساعة الثامنة صباحاً (8:00).",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#fffbeb"/>
+                            <circle cx="140" cy="78" r="34" fill="#fed7aa"/>
+                            <circle cx="128" cy="74" r="3.5" fill="#1e293b"/>
+                            <circle cx="152" cy="74" r="3.5" fill="#1e293b"/>
+                            <rect x="40" y="112" width="200" height="50" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+                            <!-- Clock 8:00 -->
+                            <circle cx="242" cy="34" r="24" fill="#ffffff" stroke="#ea580c" stroke-width="3.5"/>
+                            <line x1="242" y1="34" x2="242" y2="16" stroke="#1e3a8a" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="242" y1="34" x2="226" y2="42" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+                        </svg>`
+                    },
+                    {
+                        letter: "c",
+                        spokenAnswer: "She wakes up at nine o'clock on weekends.",
+                        ar: "تستيقظ في الساعة التاسعة صباحاً (9:00).",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#f1f5f9"/>
+                            <circle cx="145" cy="86" r="22" fill="#fed7aa"/>
+                            <rect x="122" y="108" width="46" height="52" rx="8" fill="#fbcfe8"/>
+                            <line x1="125" y1="112" x2="92" y2="62" stroke="#fbcfe8" stroke-width="11" stroke-linecap="round"/>
+                            <line x1="165" y1="112" x2="178" y2="38" stroke="#fbcfe8" stroke-width="11" stroke-linecap="round"/>
+                            <!-- Clock 9:00 -->
+                            <circle cx="242" cy="34" r="24" fill="#ffffff" stroke="#ea580c" stroke-width="3.5"/>
+                            <line x1="242" y1="34" x2="242" y2="16" stroke="#1e3a8a" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="242" y1="34" x2="225" y2="34" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+                        </svg>`
+                    }
+                ]
+            },
+            {
+                id: 4,
+                question: "How do the boys get home after school?",
+                questionAr: "كيف يعود الأولاد إلى المنزل بعد المدرسة؟",
+                correct: "c",
+                userChoice: null,
+                options: [
+                    {
+                        letter: "a",
+                        spokenAnswer: "They go home by car with their dad.",
+                        ar: "يعودون إلى المنزل بالسيارة مع والدهم.",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#cbd5e1"/>
+                            <circle cx="95" cy="54" r="22" fill="#fed7aa"/>
+                            <rect x="65" y="78" width="65" height="75" rx="10" fill="#94a3b8"/>
+                            <!-- Steering wheel -->
+                            <circle cx="195" cy="105" r="28" fill="none" stroke="#1e293b" stroke-width="6"/>
+                            <line x1="125" y1="95" x2="185" y2="95" stroke="#94a3b8" stroke-width="12" stroke-linecap="round"/>
+                        </svg>`
+                    },
+                    {
+                        letter: "b",
+                        spokenAnswer: "They take the school bus home after school.",
+                        ar: "يركبون الحافلة المدرسية للعودة إلى المنزل.",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#334155"/>
+                            <rect x="35" y="25" width="75" height="140" rx="10" fill="#475569"/>
+                            <circle cx="135" cy="56" r="22" fill="#fed7aa"/>
+                            <rect x="108" y="80" width="54" height="75" rx="8" fill="#ffffff"/>
+                            <circle cx="198" cy="64" r="18" fill="#fed7aa"/>
+                            <rect x="178" y="84" width="42" height="65" rx="6" fill="#0f766e"/>
+                        </svg>`
+                    },
+                    {
+                        letter: "c",
+                        spokenAnswer: "They ride their bikes home after school.",
+                        ar: "يركبون دراجاتهم الهوائية للعودة إلى المنزل.",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#dcfce7"/>
+                            <rect x="0" y="75" width="280" height="90" fill="#86efac"/>
+                            <!-- Boy 1 on bike -->
+                            <circle cx="105" cy="42" r="12" fill="#1e293b"/>
+                            <rect x="92" y="55" width="26" height="36" rx="5" fill="#38bdf8"/>
+                            <circle cx="105" cy="124" r="18" fill="none" stroke="#1e293b" stroke-width="4"/>
+                            <!-- Boy 2 on bike -->
+                            <circle cx="172" cy="46" r="12" fill="#78350f"/>
+                            <rect x="160" y="58" width="24" height="34" rx="5" fill="#f5f5f4"/>
+                            <circle cx="172" cy="124" r="18" fill="none" stroke="#1e293b" stroke-width="4"/>
+                        </svg>`
+                    }
+                ]
+            },
+            {
+                id: 5,
+                question: "What do the boy's grandparents need help with?",
+                questionAr: "ما الشيء الذي يحتاج أجداد الولد المساعدة فيه؟",
+                correct: "b",
+                userChoice: null,
+                options: [
+                    {
+                        letter: "a",
+                        spokenAnswer: "They need help washing the dirty dishes in the kitchen.",
+                        ar: "يحتاجون إلى المساعدة في غسل الأطباق في المطبخ.",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#f1f5f9"/>
+                            <rect x="0" y="112" width="280" height="53" fill="#b45309"/>
+                            <ellipse cx="75" cy="102" rx="28" ry="8" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+                            <path d="M115 80 L175 80 L168 108 L122 108 Z" fill="#84cc16" stroke="#4d7c0f" stroke-width="2"/>
+                            <rect x="195" y="72" width="42" height="38" rx="4" fill="#94a3b8"/>
+                        </svg>`
+                    },
+                    {
+                        letter: "b",
+                        spokenAnswer: "They need help sweeping the leaves in the yard.",
+                        ar: "يحتاجون إلى المساعدة في كنس وجمع أوراق الشجر في الحديقة.",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#fef08a"/>
+                            <polygon points="0,95 280,75 280,165 0,165" fill="#eab308"/>
+                            <circle cx="115" cy="48" r="16" fill="#fed7aa"/>
+                            <rect x="98" y="64" width="34" height="38" rx="6" fill="#e2e8f0"/>
+                            <rect x="102" y="100" width="26" height="34" rx="4" fill="#1d4ed8"/>
+                            <line x1="95" y1="82" x2="185" y2="132" stroke="#b45309" stroke-width="4" stroke-linecap="round"/>
+                            <polygon points="175,124 218,118 228,148 168,142" fill="#334155"/>
+                        </svg>`
+                    },
+                    {
+                        letter: "c",
+                        spokenAnswer: "They need help cleaning the messy clothes on the sofa.",
+                        ar: "يحتاجون إلى المساعدة في ترتيب الملابس على الأريكة.",
+                        customImg: null,
+                        svg: `<svg viewBox="0 0 280 165" class="w-full h-full object-cover">
+                            <rect width="280" height="165" fill="#f5f5f4"/>
+                            <rect x="25" y="65" width="230" height="72" rx="10" fill="#334155"/>
+                            <!-- Pile of colorful clothes -->
+                            <ellipse cx="95" cy="98" rx="34" ry="14" fill="#f43f5e"/>
+                            <ellipse cx="145" cy="102" rx="38" ry="15" fill="#93c5fd"/>
+                            <ellipse cx="195" cy="98" rx="32" ry="14" fill="#fb923c"/>
+                            <rect x="75" y="45" width="25" height="35" rx="4" fill="#a855f7"/>
+                            <rect x="165" y="48" width="28" height="34" rx="4" fill="#f472b6"/>
+                        </svg>`
+                    }
+                ]
+            }
+        ];
+
+        // =====================================================================
+        // 2. بيانات التمرين الثاني: Choose a picture from Ex 1 & Write 2 sentences
+        // =====================================================================
+        const ex2Samples = [
+            {
+                en: "In this picture, the girl is in the park after school. She is hugging her friend.",
+                ar: "في هذه الصورة، الفتاة في الحديقة بعد المدرسة. هي تعانق صديقتها."
+            },
+            {
+                en: "In this picture, the boy is watching a cooking show on TV. The chef is making delicious food.",
+                ar: "في هذه الصورة، الولد يشاهد برنامج طبخ في التلفاز. الطاهي يعد طعاماً لذيذاً."
+            },
+            {
+                en: "In this picture, Penelope is waking up at nine o'clock on the weekend. She is happy and rested.",
+                ar: "في هذه الصورة، تستيقظ بينيلوبي في الساعة التاسعة في عطلة نهاية الأسبوع. هي سعيدة ومرتاحة."
+            },
+            {
+                en: "In this picture, the boys are riding their bikes home after school. They are riding in the park.",
+                ar: "في هذه الصورة، يركب الأولاد دراجاتهم للعودة إلى المنزل بعد المدرسة. هم يركبون في الحديقة."
+            },
+            {
+                en: "In this picture, the boy is helping his grandparents in the yard. He is sweeping the leaves.",
+                ar: "في هذه الصورة، يساعد الولد أجداده في الحديقة. هو يكنس أوراق الشجر."
+            }
+        ];
+
+        let showingAllAnswers = false;
+        let ex1CustomAudioData = null;
+
+        // مفاتيح حفظ الصور والصوت في المتصفح
+        const STORAGE_KEY_P141_MEDIA = 'unit2_p141_saved_media_v1';
+        const IDB_NAME = 'Unit2Page141DB';
+        const IDB_STORE = 'mediaStore';
+
+        // إعدادات الصوت التعليمي الهادئ والمتوافق مع GitHub Pages
+        let currentSpeechRate = 0.78;
+        let activeTimeouts = [];
+        let lockedNativeVoice = null;
+        let currentAudioPlayer = null;
+        let currentSpeechSessionId = 0;
+        let utteranceGcKeeper = [];
+
+        const EXCLUDED_VOICE_KEYWORDS = [
+            'albert', 'bad news', 'bahh', 'bells', 'boing', 'bubbles', 'cellos',
+            'deranged', 'good news', 'hysterical', 'junior', 'organ', 'princess',
+            'ralph', 'superstar', 'trinoids', 'whisper', 'wobble', 'zarvox', 'fred',
+            'william', 'espeak', 'david', 'mark', 'george', 'richard', 'zira'
+        ];
+
+        // =====================================================================
+        // 3. التحكم في المقطع الصوتي الأصلي (2.1.mp3) دون تغيير حتى على GitHub
+        // =====================================================================
+        function getExactMp3Player() {
+            return document.getElementById('exact-mp3-audio-player');
+        }
+
+        function formatSeconds(sec) {
+            if (!isFinite(sec) || sec < 0) sec = 0;
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60);
+            return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+
+        function getSegmentByCurrentTime(sec) {
+            let currentSeg = exactSegmentTimestamps[0];
+            for (const seg of exactSegmentTimestamps) {
+                if (sec >= seg.start) {
+                    currentSeg = seg;
+                }
+            }
+            return currentSeg;
+        }
+
+        function setupExactMp3Events() {
+            const player = getExactMp3Player();
+            if (!player || player.dataset.eventsAttached === 'true') return;
+            player.dataset.eventsAttached = 'true';
+
+            player.addEventListener('loadedmetadata', () => {
+                exactMp3Ready = true;
+                updateBuiltInPlayerUI();
+            });
+
+            player.addEventListener('canplay', () => {
+                exactMp3Ready = true;
+                updateBuiltInPlayerUI();
+            });
+
+            player.addEventListener('timeupdate', () => {
+                updateBuiltInPlayerUI();
+            });
+
+            player.addEventListener('play', () => {
+                updateBuiltInPlayerUI();
+            });
+
+            player.addEventListener('pause', () => {
+                updateBuiltInPlayerUI();
+            });
+
+            player.addEventListener('ended', () => {
+                updateBuiltInPlayerUI();
+                showToast("انتهى المقطع الصوتي الأصلي (2.1) ✓");
+                setTimeout(hideToast, 2000);
+            });
+
+            player.addEventListener('error', () => {
+                if (exactMp3SourceType === 'file') {
+                    exactMp3Ready = false;
+                    exactMp3SourceType = 'none';
+                    updateBuiltInPlayerUI();
+                }
+            });
+        }
+
+        function loadExactMp3Source(srcUrl, sourceType, autoPlay = false) {
+            const player = getExactMp3Player();
+            if (!player) return;
+            setupExactMp3Events();
+
+            exactMp3SourceType = sourceType;
+            player.src = srcUrl;
+            player.load();
+
+            if (autoPlay) {
+                player.play().catch(() => {});
+            }
+            updateBuiltInPlayerUI();
+        }
+
+        function updateBuiltInPlayerUI() {
+            const playIcon = document.getElementById('mainAudioPlayIcon');
+            const badgeIcon = document.getElementById('badgePlayIcon');
+            const playText = document.getElementById('mainAudioPlayText');
+            const statusPill = document.getElementById('audioStatusPill');
+            const progressFill = document.getElementById('audioProgressFill');
+            const timeDisplay = document.getElementById('audioTimeDisplay');
+            const sourceLabel = document.getElementById('githubAudioSourceLabel');
+            const quickDlBtn = document.getElementById('quickDownloadGithubBtn');
+
+            // إزالة تمييز الأسئلة السابقة
+            document.querySelectorAll('.audio-active-question').forEach(el => {
+                el.classList.remove('audio-active-question');
+            });
+
+            // تحديث شريط حالة التثبيت لـ GitHub
+            if (ex1CustomAudioData) {
+                if (sourceLabel) {
+                    sourceLabel.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 ml-1"></i>تم تثبيت نفس ملف <strong>2.1.mp3</strong> الأصلي داخل الصفحة بنجاح! سيعمل بنفس الصوت تماماً على GitHub.`;
+                }
+                if (quickDlBtn) quickDlBtn.classList.remove('hidden');
+            } else if (exactMp3Ready && exactMp3SourceType === 'file') {
+                if (sourceLabel) {
+                    sourceLabel.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 ml-1"></i>تم تحميل ملف <strong>2.1.mp3</strong> الأصلي تلقائياً من نفس المجلد (جاهز على GitHub).`;
+                }
+            }
+
+            // الوضع الأول: استخدام ملف 2.1.mp3 الأصلي مباشرة
+            const player = getExactMp3Player();
+            if (exactMp3Ready && player) {
+                const dur = isFinite(player.duration) && player.duration > 0 ? player.duration : 140;
+                const cur = player.currentTime || 0;
+                const pct = Math.min(100, Math.round((cur / dur) * 100));
+
+                if (progressFill) progressFill.style.width = `${pct}%`;
+                if (timeDisplay) timeDisplay.innerText = `${formatSeconds(cur)} / ${formatSeconds(dur)}`;
+
+                const activeSeg = getSegmentByCurrentTime(cur);
+                const spkEl = document.getElementById('liveScriptSpeaker');
+                const enEl = document.getElementById('liveScriptEn');
+                const arEl = document.getElementById('liveScriptAr');
+                if (spkEl) spkEl.innerText = activeSeg.label;
+                if (enEl) enEl.innerText = activeSeg.en;
+                if (arEl) arEl.innerText = activeSeg.ar;
+
+                if (!player.paused && !player.ended) {
+                    if (playIcon) playIcon.className = 'fa-solid fa-pause';
+                    if (badgeIcon) badgeIcon.className = 'fa-solid fa-pause text-[10px] text-pink-600';
+                    if (playText) playText.innerText = 'إيقاف مؤقت';
+                    if (statusPill) {
+                        statusPill.innerText = activeSeg.qId > 0
+                            ? `🔊 الصوت الأصلي 2.1 • السؤال ${activeSeg.qId}`
+                            : '🔊 الصوت الأصلي 2.1 • المقدمة';
+                    }
+                    if (activeSeg.qId > 0) {
+                        const qEl = document.getElementById(`ex1-qblock-${activeSeg.qId}`);
+                        if (qEl) qEl.classList.add('audio-active-question');
+                    }
+                } else if (cur > 0 && !player.ended) {
+                    if (playIcon) playIcon.className = 'fa-solid fa-play';
+                    if (badgeIcon) badgeIcon.className = 'fa-solid fa-play text-[10px] text-teal-700';
+                    if (playText) playText.innerText = 'متابعة التشغيل';
+                    if (statusPill) statusPill.innerText = '⏸ متوقف مؤقتاً (2.1.mp3)';
+                } else {
+                    if (playIcon) playIcon.className = 'fa-solid fa-play';
+                    if (badgeIcon) badgeIcon.className = 'fa-solid fa-play text-[10px] text-teal-700';
+                    if (playText) playText.innerText = 'تشغيل المقطع الصوتي (2.1)';
+                    if (statusPill) statusPill.innerText = '🎧 الصوت الأصلي 2.1.mp3 جاهز عند النقر';
+                }
+                return;
+            }
+
+            // الوضع الاحتياطي التفاعلي عند عدم إرفاق ملف 2.1.mp3 بعد
+            const totalItems = builtInTrack2_1.length;
+            const totalDurationSec = 140;
+            const currentSec = Math.min(totalDurationSec, Math.round((trackState.currentIndex / totalItems) * totalDurationSec));
+            const pct = Math.min(100, Math.round((trackState.currentIndex / totalItems) * 100));
+
+            if (progressFill) progressFill.style.width = `${pct}%`;
+            if (timeDisplay) timeDisplay.innerText = `${formatSeconds(currentSec)} / ${formatSeconds(totalDurationSec)}`;
+
+            if (trackState.isPlaying) {
+                if (playIcon) playIcon.className = 'fa-solid fa-pause';
+                if (badgeIcon) badgeIcon.className = 'fa-solid fa-pause text-[10px] text-pink-600';
+                if (playText) playText.innerText = 'إيقاف مؤقت';
+
+                const item = builtInTrack2_1[trackState.currentIndex];
+                if (item) {
+                    if (statusPill) {
+                        statusPill.innerText = item.qId > 0
+                            ? `🔊 جاري التشغيل: السؤال ${item.qId}`
+                            : '🔊 جاري تشغيل المقدمة...';
+                    }
+                    if (item.qId > 0) {
+                        const qEl = document.getElementById(`ex1-qblock-${item.qId}`);
+                        if (qEl) qEl.classList.add('audio-active-question');
+                    }
+                    const spkEl = document.getElementById('liveScriptSpeaker');
+                    const enEl = document.getElementById('liveScriptEn');
+                    const arEl = document.getElementById('liveScriptAr');
+                    if (spkEl) spkEl.innerText = item.speakerLabel;
+                    if (enEl) enEl.innerText = item.en;
+                    if (arEl) arEl.innerText = item.ar;
+                }
+            } else if (trackState.isPaused) {
+                if (playIcon) playIcon.className = 'fa-solid fa-play';
+                if (badgeIcon) badgeIcon.className = 'fa-solid fa-play text-[10px] text-teal-700';
+                if (playText) playText.innerText = 'متابعة التشغيل';
+                if (statusPill) statusPill.innerText = '⏸ متوقف مؤقتاً';
+            } else {
+                if (playIcon) playIcon.className = 'fa-solid fa-play';
+                if (badgeIcon) badgeIcon.className = 'fa-solid fa-play text-[10px] text-teal-700';
+                if (playText) playText.innerText = 'تشغيل المقطع الصوتي (2.1)';
+                if (statusPill) statusPill.innerText = '🎧 جاهز للتشغيل عند النقر';
+            }
+        }
+
+        function toggleBuiltInAudioTrack() {
+            const player = getExactMp3Player();
+            if (exactMp3Ready && player) {
+                resetAllHighlights();
+                if (player.paused) {
+                    player.play().catch(() => {});
+                } else {
+                    player.pause();
+                }
+                updateBuiltInPlayerUI();
+                return;
+            }
+
+            if (trackState.isPlaying) {
+                pauseBuiltInAudioTrack();
+            } else {
+                startBuiltInAudioTrack(trackState.isPaused ? trackState.currentIndex : 0);
+            }
+        }
+
+        function startBuiltInAudioTrack(startIndex = 0) {
+            resetAllHighlights();
+            if (trackState.timerId) {
+                clearTimeout(trackState.timerId);
+                trackState.timerId = null;
+            }
+
+            trackState.runId++;
+            trackState.isPlaying = true;
+            trackState.isPaused = false;
+            trackState.currentIndex = Math.max(0, Math.min(startIndex, builtInTrack2_1.length - 1));
+
+            playNextTrackLine(trackState.runId);
+        }
+
+        function playNextTrackLine(runId) {
+            if (runId !== trackState.runId || !trackState.isPlaying) return;
+
+            if (trackState.currentIndex >= builtInTrack2_1.length) {
+                trackState.isPlaying = false;
+                trackState.isPaused = false;
+                trackState.currentIndex = 0;
+                updateBuiltInPlayerUI();
+                showToast("انتهى المقطع الصوتي للتمرين الأول ✓");
+                setTimeout(hideToast, 2000);
+                return;
+            }
+
+            const item = builtInTrack2_1[trackState.currentIndex];
+            updateBuiltInPlayerUI();
+
+            speakRoleLine(item.en, item.role, () => {
+                if (runId !== trackState.runId || !trackState.isPlaying) return;
+                trackState.timerId = setTimeout(() => {
+                    if (runId !== trackState.runId || !trackState.isPlaying) return;
+                    trackState.currentIndex++;
+                    playNextTrackLine(runId);
+                }, item.pauseAfter || 350);
+            });
+        }
+
+        function pauseBuiltInAudioTrack() {
+            const player = getExactMp3Player();
+            if (player && !player.paused) {
+                player.pause();
+            }
+
+            trackState.runId++;
+            trackState.isPlaying = false;
+            trackState.isPaused = true;
+            if (trackState.timerId) {
+                clearTimeout(trackState.timerId);
+                trackState.timerId = null;
+            }
+            if ('speechSynthesis' in window) {
+                try { window.speechSynthesis.cancel(); } catch (e) {}
+            }
+            if (currentAudioPlayer) {
+                currentAudioPlayer.pause();
+                currentAudioPlayer = null;
+            }
+            updateBuiltInPlayerUI();
+        }
+
+        function stopBuiltInAudioTrack() {
+            const player = getExactMp3Player();
+            if (player) {
+                player.pause();
+                try { player.currentTime = 0; } catch (e) {}
+            }
+
+            trackState.runId++;
+            trackState.isPlaying = false;
+            trackState.isPaused = false;
+            trackState.currentIndex = 0;
+            if (trackState.timerId) {
+                clearTimeout(trackState.timerId);
+                trackState.timerId = null;
+            }
+            if ('speechSynthesis' in window) {
+                try { window.speechSynthesis.cancel(); } catch (e) {}
+            }
+            if (currentAudioPlayer) {
+                currentAudioPlayer.pause();
+                currentAudioPlayer = null;
+            }
+            updateBuiltInPlayerUI();
+        }
+
+        function playBuiltInFromSegment(qId) {
+            if (qId > 0) {
+                const qEl = document.getElementById(`ex1-qblock-${qId}`);
+                if (qEl) qEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            const player = getExactMp3Player();
+            if (exactMp3Ready && player) {
+                resetAllHighlights();
+                const seg = exactSegmentTimestamps.find(s => s.qId === qId) || exactSegmentTimestamps[0];
+                try { player.currentTime = seg.start; } catch (e) {}
+                player.play().catch(() => {});
+                updateBuiltInPlayerUI();
+                return;
+            }
+
+            const idx = builtInTrack2_1.findIndex(item => item.qId === qId);
+            if (idx === -1) return;
+            startBuiltInAudioTrack(idx);
+        }
+
+        function seekBuiltInAudio(event) {
+            const bar = event.currentTarget;
+            if (!bar) return;
+            const rect = bar.getBoundingClientRect();
+            const clickX = Math.max(0, Math.min(event.clientX - rect.left, rect.width));
+            const ratio = clickX / rect.width;
+
+            const player = getExactMp3Player();
+            if (exactMp3Ready && player && isFinite(player.duration) && player.duration > 0) {
+                resetAllHighlights();
+                player.currentTime = ratio * player.duration;
+                player.play().catch(() => {});
+                updateBuiltInPlayerUI();
+                return;
+            }
+
+            const targetIdx = Math.floor(ratio * builtInTrack2_1.length);
+            startBuiltInAudioTrack(targetIdx);
+        }
+
+        function toggleAudioScriptBox() {
+            const box = document.getElementById('liveAudioScriptBox');
+            const label = document.getElementById('toggleScriptText');
+            if (!box || !label) return;
+
+            if (box.classList.contains('hidden')) {
+                box.classList.remove('hidden');
+                label.innerText = 'إخفاء نص الحوار';
+            } else {
+                box.classList.add('hidden');
+                label.innerText = 'إظهار نص الحوار';
+            }
+        }
+
+        // =====================================================================
+        // 4. بناء وعرض التمرين الأول (Listen and check ✓)
+        // =====================================================================
+        function renderEx1Questions() {
+            const container = document.getElementById('ex1QuestionsList');
+            if (!container) return;
+
+            container.innerHTML = ex1Questions.map(q => {
+                const isAnswered = q.userChoice !== null;
+                const isSolved = q.userChoice === q.correct;
+                const chosenOptObj = q.options.find(o => o.letter === q.userChoice);
+
+                return `
+                <div id="ex1-qblock-${q.id}" class="question-block flex flex-col gap-3 ${isSolved ? 'solved' : ''}">
+                    <!-- عنوان السؤال وزر الاستماع بعد الإجابة -->
+                    <div class="flex items-center justify-between gap-2 flex-wrap">
+                        <div class="flex items-center gap-2.5 en-font text-base sm:text-xl font-black text-slate-900">
+                            <span class="w-7 h-7 rounded-full bg-pink-600 text-white font-black text-sm flex items-center justify-center flex-shrink-0 shadow-2xs">
+                                ${q.id}
+                            </span>
+                            <span>${q.question}</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <span dir="rtl" class="ar-font text-xs sm:text-sm font-bold text-slate-500">
+                                ${q.questionAr}
+                            </span>
+                            <button type="button" onclick="playBuiltInFromSegment(${q.id})" class="w-8 h-8 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-700 border border-pink-300 flex items-center justify-center text-xs shadow-2xs transition flex-shrink-0" title="استمع لحوار السؤال ${q.id} في المقطع الصوتي">
+                                <i class="fa-solid fa-headphones"></i>
+                            </button>
+                            ${isAnswered ? `
+                                <button type="button" onclick="readEx1AnsweredQuestion(${q.id})" class="w-8 h-8 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-xs shadow transition flex-shrink-0" title="استمع للسؤال والإجابة">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                </button>
+                            ` : ''}
+                        </div>
+                    </div>
+
+                    <!-- الصور الثلاث (a, b, c) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                        ${q.options.map(opt => {
+                            const isThisChecked = q.userChoice === opt.letter;
+                            let cardStateClass = '';
+                            if (isThisChecked) {
+                                cardStateClass = (opt.letter === q.correct) ? 'checked-correct' : 'checked-wrong';
+                            }
+
+                            return `
+                            <div id="ex1-pic-${q.id}-${opt.letter}"
+                                 onclick="handleEx1PicCheck(${q.id}, '${opt.letter}')"
+                                 class="pic-option-card h-40 sm:h-44 ${cardStateClass}">
+                                <div class="w-full h-full">
+                                    ${opt.customImg
+                                        ? `<img src="${opt.customImg}" alt="Option ${q.id}${opt.letter}" class="w-full h-full object-cover block" />`
+                                        : opt.svg
+                                    }
+                                </div>
+
+                                <!-- شارة الحرف الوردية (a, b, c) أعلى اليسار -->
+                                <div class="absolute top-2 left-2 z-10">
+                                    <span class="pink-letter-badge">${opt.letter}</span>
+                                </div>
+
+                                <!-- أيقونة الكاميرا الصغيرة جداً أعلى اليمين -->
+                                <div class="absolute top-2 right-2 z-20" onclick="event.stopPropagation()">
+                                    <label for="upload-pic-${q.id}-${opt.letter}" class="cursor-pointer w-5 h-5 rounded-full bg-white/90 hover:bg-pink-50 text-pink-600 border border-pink-400 shadow-2xs flex items-center justify-center text-[9px] transition opacity-85 hover:opacity-100" title="إضافة أو تغيير الصورة">
+                                        <i class="fa-solid fa-camera"></i>
+                                    </label>
+                                    <input type="file" id="upload-pic-${q.id}-${opt.letter}" accept="image/*" class="hidden" onchange="handleEx1PicUpload(event, ${q.id}, '${opt.letter}')" />
+                                </div>
+
+                                <!-- مربع علامة الصح (✓) أسفل اليمين كما في الكتاب -->
+                                <div class="absolute bottom-2 right-2 z-10">
+                                    <div class="check-square">
+                                        ${isThisChecked ? '✓' : ''}
+                                    </div>
+                                </div>
+                            </div>
+                            `;
+                        }).join('')}
+                    </div>
+
+                    <!-- شريط الجملة والترجمة العربية يظهر بعد الإجابة -->
+                    <div dir="rtl" class="ar-font text-xs sm:text-base font-extrabold ${isAnswered ? 'text-teal-900 bg-teal-50/90 border border-teal-200' : 'text-slate-400 bg-slate-50'} px-3.5 py-2 rounded-xl text-center">
+                        ${isAnswered && chosenOptObj
+                            ? `<span dir="ltr" class="en-font font-black text-sky-800 block mb-0.5">${chosenOptObj.spokenAnswer}</span>${chosenOptObj.ar}`
+                            : 'اختر الصورة المناسبة بوضع علامة (✓) لسماع النطق وظهور الترجمة العربية'
+                        }
+                    </div>
+                </div>
+                `;
+            }).join('');
+
+            const solvedCount = ex1Questions.filter(q => q.userChoice === q.correct).length;
+            const badge = document.getElementById('ex1ScoreBadge');
+            if (badge) badge.innerText = `النتيجة: ${solvedCount} / 5 ⭐`;
+            updateSaveButtonVisibility();
+        }
+
+        function handleEx1PicCheck(qId, letter) {
+            const q = ex1Questions.find(item => item.id === qId);
+            if (!q) return;
+
+            q.userChoice = letter;
+            renderEx1Questions();
+
+            if (letter === q.correct && typeof confetti === 'function') {
+                const allSolved = ex1Questions.every(item => item.userChoice === item.correct);
+                if (allSolved) {
+                    confetti({ particleCount: 75, spread: 70, origin: { y: 0.6 } });
+                } else {
+                    confetti({ particleCount: 25, spread: 45, origin: { y: 0.7 } });
+                }
+            }
+
+            // لا تُقرأ الجملة إلا بعد اختيار الصورة، مع تظليل ثابت جذاب
+            readEx1AnsweredQuestion(qId);
+        }
+
+        function readEx1AnsweredQuestion(qId) {
+            const q = ex1Questions.find(item => item.id === qId);
+            if (!q || !q.userChoice) {
+                showToast("ضع علامة (✓) على إحدى الصور أولاً لسماع الجملة!");
+                setTimeout(hideToast, 1800);
+                return;
+            }
+
+            const chosenOpt = q.options.find(o => o.letter === q.userChoice);
+            if (!chosenOpt) return;
+
+            pauseBuiltInAudioTrack();
+            resetAllHighlights();
+            const qBlock = document.getElementById(`ex1-qblock-${qId}`);
+            const picCard = document.getElementById(`ex1-pic-${qId}-${q.userChoice}`);
+            if (qBlock) qBlock.classList.add('static-attractive-highlight');
+            if (picCard) picCard.classList.add('static-attractive-highlight');
+
+            const textToSpeak = `${q.question} ${chosenOpt.spokenAnswer}`;
+            showToast(chosenOpt.spokenAnswer);
+
+            const startTime = Date.now();
+            const minDuration = 2000;
+
+            speakSentenceWithLockedVoice(textToSpeak, () => {
+                const elapsed = Date.now() - startTime;
+                const remaining = Math.max(0, minDuration - elapsed);
+                const endTimer = setTimeout(() => {
+                    if (qBlock) qBlock.classList.remove('static-attractive-highlight');
+                    if (picCard) picCard.classList.remove('static-attractive-highlight');
+                    hideToast();
+                }, remaining);
+                activeTimeouts.push(endTimer);
+            });
+        }
+
+        function revealEx1Answers() {
+            ex1Questions.forEach(q => { q.userChoice = q.correct; });
+            renderEx1Questions();
+        }
+
+        function resetEx1Answers() {
+            resetAllHighlights();
+            ex1Questions.forEach(q => { q.userChoice = null; });
+            renderEx1Questions();
+        }
+
+        // =====================================================================
+        // 5. دوال التمرين الثاني: Choose a picture & Write two sentences
+        // =====================================================================
+        function translateEx2Text(text) {
+            if (!text || !text.trim()) return "";
+            const norm = text.trim().toLowerCase().replace(/\s+/g, ' ');
+
+            for (const s of ex2Samples) {
+                if (s.en.toLowerCase() === norm || s.en.toLowerCase().replace(/\.$/, '') === norm.replace(/\.$/, '')) {
+                    return s.ar;
+                }
+            }
+
+            if (norm.includes("park") && norm.includes("friend")) return "في هذه الصورة، الفتاة في الحديقة بعد المدرسة وتلعب مع صديقتها.";
+            if (norm.includes("cooking") || norm.includes("chef")) return "في هذه الصورة، الولد يشاهد برنامج طبخ في التلفاز.";
+            if (norm.includes("nine") || norm.includes("penelope") || norm.includes("wake")) return "في هذه الصورة، تستيقظ بينيلوبي في الساعة التاسعة في عطلة نهاية الأسبوع.";
+            if (norm.includes("bike")) return "في هذه الصورة، يركب الأولاد دراجاتهم للعودة إلى المنزل بعد المدرسة.";
+            if (norm.includes("leaves") || norm.includes("grandparents") || norm.includes("yard")) return "في هذه الصورة، يساعد الولد أجداده في كنس أوراق الشجر في الحديقة.";
+            if (norm.includes("dishes") || norm.includes("kitchen")) return "في هذه الصورة، توجد أطباق تحتاج إلى الغسل في المطبخ.";
+
+            return "في هذه الصورة، يقوم الأشخاص بأنشطتهم اليومية وأعمالهم المنزلية.";
+        }
+
+        function updateEx2Translation() {
+            const inputEl = document.getElementById('ex2-input');
+            const arBox = document.getElementById('ex2-ar-box');
+            if (!inputEl || !arBox) return;
+
+            const rawVal = inputEl.value.trim();
+            if (!rawVal) {
+                arBox.innerText = "الترجمة: (اختر صورة من الأزرار أعلاه أو اكتب جملتين لتظهر ترجمتهما باللغة العربية هنا)";
+                arBox.className = "w-full ar-font text-base sm:text-lg font-bold text-slate-500 bg-slate-100 border-2 border-slate-200 px-5 py-2.5 rounded-2xl mt-3 text-center transition";
+                return;
+            }
+
+            arBox.innerText = translateEx2Text(rawVal);
+            arBox.className = "w-full ar-font text-lg sm:text-2xl font-black text-teal-900 bg-emerald-50 border-2 border-emerald-300 px-5 py-2.5 rounded-2xl mt-3 text-center shadow-xs transition";
+        }
+
+        function setEx2Sentence(sampleIndex) {
+            const sample = ex2Samples[sampleIndex];
+            const inputEl = document.getElementById('ex2-input');
+            if (!sample || !inputEl) return;
+
+            inputEl.value = sample.en;
+            updateEx2Translation();
+            speakEx2Answer();
+        }
+
+        function speakEx2Answer() {
+            const inputEl = document.getElementById('ex2-input');
+            const boxEl = document.getElementById('ex2-card-box');
+            if (!inputEl) return;
+
+            const textVal = inputEl.value.trim();
+            if (!textVal) {
+                showToast("اختر من الأزرار المقترحة أو اكتب إجابتك أولاً لسماع النطق!");
+                setTimeout(hideToast, 1900);
+                return;
+            }
+
+            pauseBuiltInAudioTrack();
+            resetAllHighlights();
+            if (boxEl) boxEl.classList.add('static-attractive-highlight');
+            showToast(textVal);
+
+            const startTime = Date.now();
+            const minDuration = 1850;
+
+            speakSentenceWithLockedVoice(textVal, () => {
+                const elapsed = Date.now() - startTime;
+                const remaining = Math.max(0, minDuration - elapsed);
+                const endTimer = setTimeout(() => {
+                    if (boxEl) boxEl.classList.remove('static-attractive-highlight');
+                    hideToast();
+                }, remaining);
+                activeTimeouts.push(endTimer);
+            });
+        }
+
+        function fillSampleEx2Answer() {
+            const inputEl = document.getElementById('ex2-input');
+            if (inputEl) {
+                inputEl.value = ex2Samples[0].en;
+                updateEx2Translation();
+            }
+        }
+
+        function resetEx2Answer() {
+            resetAllHighlights();
+            const inputEl = document.getElementById('ex2-input');
+            if (inputEl) {
+                inputEl.value = "";
+                updateEx2Translation();
+            }
+        }
+
+        function toggleAllPageAnswers() {
+            showingAllAnswers = !showingAllAnswers;
+            const btn = document.getElementById('showAllAnswersBtn');
+
+            if (showingAllAnswers) {
+                revealEx1Answers();
+                fillSampleEx2Answer();
+                if (btn) {
+                    btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i><span>إخفاء الحلول</span>';
+                    btn.classList.replace('bg-amber-500', 'bg-slate-700');
+                    btn.classList.replace('hover:bg-amber-600', 'hover:bg-slate-800');
+                }
+            } else {
+                resetEx1Answers();
+                resetEx2Answer();
+                if (btn) {
+                    btn.innerHTML = '<i class="fa-solid fa-key"></i><span>إظهار جميع الحلول</span>';
+                    btn.classList.replace('bg-slate-700', 'bg-amber-500');
+                    btn.classList.replace('hover:bg-slate-800', 'hover:bg-amber-600');
+                }
+            }
+        }
+
+        // =====================================================================
+        // 6. رفع وحفظ الصور والمقطع الصوتي (IndexedDB + LocalStorage + HTML)
+        // =====================================================================
+        function openMediaDB() {
+            return new Promise((resolve) => {
+                if (!('indexedDB' in window)) {
+                    resolve(null);
+                    return;
+                }
+                const req = indexedDB.open(IDB_NAME, 1);
+                req.onupgradeneeded = (e) => {
+                    const db = e.target.result;
+                    if (!db.objectStoreNames.contains(IDB_STORE)) {
+                        db.createObjectStore(IDB_STORE);
+                    }
+                };
+                req.onsuccess = (e) => resolve(e.target.result);
+                req.onerror = () => resolve(null);
+            });
+        }
+
+        async function idbSetItem(key, val) {
+            try {
+                const db = await openMediaDB();
+                if (!db) return;
+                return new Promise((resolve) => {
+                    const tx = db.transaction(IDB_STORE, 'readwrite');
+                    tx.objectStore(IDB_STORE).put(val, key);
+                    tx.oncomplete = () => resolve(true);
+                    tx.onerror = () => resolve(false);
+                });
+            } catch (e) {}
+        }
+
+        async function idbGetItem(key) {
+            try {
+                const db = await openMediaDB();
+                if (!db) return null;
+                return new Promise((resolve) => {
+                    const tx = db.transaction(IDB_STORE, 'readonly');
+                    const req = tx.objectStore(IDB_STORE).get(key);
+                    req.onsuccess = () => resolve(req.result || null);
+                    req.onerror = () => resolve(null);
+                });
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function handleEx1PicUpload(event, qId, letter) {
+            const file = event.target.files && event.target.files[0];
+            if (!file || !file.type.startsWith('image/')) return;
+
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const MAX_W = 550;
+                    let w = img.width;
+                    let h = img.height;
+                    if (w > MAX_W) {
+                        h = Math.round((h * MAX_W) / w);
+                        w = MAX_W;
+                    }
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, w, h);
+                    const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+
+                    const q = ex1Questions.find(item => item.id === qId);
+                    const opt = q ? q.options.find(o => o.letter === letter) : null;
+                    if (opt) {
+                        opt.customImg = dataUrl;
+                        saveAllMediaToStorage();
+                        renderEx1Questions();
+                        showToast(`تم حفظ الصورة (${qId}${letter}) بنجاح ✓`);
+                        setTimeout(hideToast, 1800);
+                    }
+                };
+                img.src = evt.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function handleEx1AudioUpload(event) {
+            const file = event.target.files && event.target.files[0];
+            if (!file || !file.type.startsWith('audio/')) return;
+
+            stopBuiltInAudioTrack();
+            const reader = new FileReader();
+            reader.onload = async function(evt) {
+                ex1CustomAudioData = evt.target.result;
+                loadExactMp3Source(ex1CustomAudioData, 'embedded', true);
+                await saveAllMediaToStorage();
+                updateSaveButtonVisibility();
+                showToast("تم تثبيت ملف 2.1.mp3 الأصلي وتشغيله بنجاح 🎵🔊");
+                setTimeout(hideToast, 2400);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        async function removeEx1CustomAudio() {
+            ex1CustomAudioData = null;
+            exactMp3Ready = false;
+            exactMp3SourceType = 'none';
+            await saveAllMediaToStorage();
+            loadExactMp3Source('2.1.mp3', 'file', false);
+            updateSaveButtonVisibility();
+            showToast("تمت إعادة ضبط مصدر الصوت ✓");
+            setTimeout(hideToast, 1800);
+        }
+
+        function buildMediaPayload() {
+            const pics = {};
+            ex1Questions.forEach(q => {
+                q.options.forEach(opt => {
+                    if (opt.customImg) {
+                        pics[`${q.id}_${opt.letter}`] = opt.customImg;
+                    }
+                });
+            });
+            return {
+                audio: ex1CustomAudioData,
+                pics
+            };
+        }
+
+        async function saveAllMediaToStorage() {
+            const payload = buildMediaPayload();
+            await idbSetItem(STORAGE_KEY_P141_MEDIA, payload);
+            try {
+                localStorage.setItem(STORAGE_KEY_P141_MEDIA, JSON.stringify(payload));
+            } catch (e) {}
+        }
+
+        async function loadAllMediaFromStorage() {
+            let payload = window.__EMBEDDED_P141_MEDIA__ || null;
+            if (!payload) {
+                try {
+                    payload = await idbGetItem(STORAGE_KEY_P141_MEDIA);
+                    if (!payload) {
+                        const raw = localStorage.getItem(STORAGE_KEY_P141_MEDIA);
+                        if (raw) payload = JSON.parse(raw);
+                    }
+                } catch (e) {}
+            }
+
+            if (payload && payload.audio) {
+                ex1CustomAudioData = payload.audio;
+                loadExactMp3Source(ex1CustomAudioData, 'embedded', false);
+            } else {
+                // محاولة التحميل التلقائي لملف 2.1.mp3 من نفس المجلد (محلياً أو على GitHub)
+                loadExactMp3Source('2.1.mp3', 'file', false);
+            }
+
+            if (payload && payload.pics) {
+                ex1Questions.forEach(q => {
+                    q.options.forEach(opt => {
+                        const key = `${q.id}_${opt.letter}`;
+                        if (payload.pics[key]) {
+                            opt.customImg = payload.pics[key];
+                        }
+                    });
+                });
+            }
+        }
+
+        function updateSaveButtonVisibility() {
+            const btn = document.getElementById('saveHtmlWithMediaBtn');
+            if (!btn) return;
+            const hasPics = ex1Questions.some(q => q.options.some(o => Boolean(o.customImg)));
+            if (ex1CustomAudioData || hasPics) btn.classList.remove('hidden');
+            else btn.classList.add('hidden');
+        }
+
+        function downloadPageWithSavedMedia() {
+            const cloneDoc = document.documentElement.cloneNode(true);
+            const scriptEl = document.createElement('script');
+            const payload = buildMediaPayload();
+            scriptEl.textContent = `window.__EMBEDDED_P141_MEDIA__ = ${JSON.stringify(payload)};`;
+            const head = cloneDoc.querySelector('head');
+            if (head) head.appendChild(scriptEl);
+
+            const htmlContent = '<!DOCTYPE html>\n' + cloneDoc.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Unit2_Page141_Listening_Speaking_GitHub.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // =====================================================================
+        // 7. محرك الصوت التعليمي الهادئ والمتوافق مع جميع المتصفحات
+        // =====================================================================
+        function findBestRoutineVoice(voicesList) {
+            if (!voicesList || voicesList.length === 0) return null;
+
+            const cleanEnVoices = voicesList.filter(v => {
+                if (!v.lang || !v.lang.toLowerCase().startsWith('en')) return false;
+                const lowerName = v.name.toLowerCase();
+                return !EXCLUDED_VOICE_KEYWORDS.some(bad => lowerName.includes(bad));
+            });
+
+            const list = cleanEnVoices.length > 0 ? cleanEnVoices : voicesList.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+
+            const priorityNames = [
+                'emma online (natural)',
+                'ava online (natural)',
+                'jenny online (natural)',
+                'michelle online (natural)',
+                'ana online (natural)',
+                'aria online (natural)',
+                'sonia online (natural)',
+                'libby online (natural)',
+                'clara online (natural)',
+                'google uk english female',
+                'samantha (enhanced)',
+                'ava (enhanced)',
+                'allison (enhanced)',
+                'google us english',
+                'samantha',
+                'ava',
+                'allison',
+                'karen',
+                'moira'
+            ];
+
+            for (const keyword of priorityNames) {
+                const match = list.find(v => v.name.toLowerCase().includes(keyword));
+                if (match) return match;
+            }
+
+            const anyNatural = list.find(v =>
+                v.name.toLowerCase().includes('natural') ||
+                v.name.toLowerCase().includes('enhanced') ||
+                v.name.toLowerCase().includes('google')
+            );
+            if (anyNatural) return anyNatural;
+
+            return list[0] || null;
+        }
+
+        function findVoiceByRole(role, voicesList) {
+            if (!voicesList || voicesList.length === 0) return lockedNativeVoice;
+            const enList = voicesList.filter(v => {
+                if (!v.lang || !v.lang.toLowerCase().startsWith('en')) return false;
+                const lowerName = v.name.toLowerCase();
+                return !EXCLUDED_VOICE_KEYWORDS.some(bad => lowerName.includes(bad));
+            });
+            const pool = enList.length > 0 ? enList : voicesList.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+            if (pool.length === 0) return lockedNativeVoice;
+
+            if (role === 'narrator' || role === 'dad' || role === 'boy1') {
+                const maleKeywords = ['guy', 'andrew', 'brian', 'christopher', 'eric', 'roger', 'steffan', 'ryan', 'daniel', 'alex', 'aaron', 'google uk english male'];
+                for (const kw of maleKeywords) {
+                    const m = pool.find(v => v.name.toLowerCase().includes(kw));
+                    if (m) return m;
+                }
+            }
+            return lockedNativeVoice || findBestRoutineVoice(voicesList);
+        }
+
+        function populateVoiceList() {
+            if (!('speechSynthesis' in window)) return;
+            const voices = window.speechSynthesis.getVoices();
+            if (!voices || voices.length === 0) return;
+
+            const best = findBestRoutineVoice(voices);
+            if (best) {
+                lockedNativeVoice = best;
+                const cleanName = best.name.replace(/Google|Microsoft|Apple|Desktop|English|United States|United Kingdom|Canada|\(\)/gi, '').trim() || 'Calm Teacher';
+                const footerBadge = document.getElementById('footerSpeakerName');
+                const toastLabel = document.getElementById('toastSpeakerLabel');
+                if (footerBadge) footerBadge.innerText = `Voice: ${cleanName}`;
+                if (toastLabel) toastLabel.innerText = `Reading calmly (${cleanName}):`;
+            }
+        }
+
+        function formatCalmEducationalText(rawText) {
+            if (!rawText) return '';
+            return String(rawText).replace(/’/g, "'").trim();
+        }
+
+        function playCloudBackupTts(text, rate, onFinished) {
+            try {
+                if (currentAudioPlayer) {
+                    currentAudioPlayer.pause();
+                    currentAudioPlayer = null;
+                }
+                const cleanText = encodeURIComponent(formatCalmEducationalText(text));
+                const cloudAudioUrl = `https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=en-US&q=${cleanText}`;
+                const audio = new Audio();
+                audio.referrerPolicy = 'no-referrer';
+                audio.src = cloudAudioUrl;
+                currentAudioPlayer = audio;
+                audio.playbackRate = Math.max(0.75, Math.min(rate || 0.85, 1.0));
+                audio.onended = () => { if (onFinished) onFinished(); };
+                audio.onerror = () => { if (onFinished) onFinished(); };
+                audio.play().catch(() => { if (onFinished) onFinished(); });
+            } catch (e) {
+                if (onFinished) onFinished();
+            }
+        }
+
+        function speakRoleLine(text, role, onFinished) {
+            currentSpeechSessionId++;
+            const sessionId = currentSpeechSessionId;
+
+            if ('speechSynthesis' in window) {
+                try {
+                    window.speechSynthesis.cancel();
+                    window.speechSynthesis.resume();
+                } catch (e) {}
+
+                const startTimer = setTimeout(() => {
+                    if (sessionId !== currentSpeechSessionId) return;
+
+                    const voices = window.speechSynthesis.getVoices();
+                    populateVoiceList();
+                    const roleVoice = findVoiceByRole(role, voices) || lockedNativeVoice;
+
+                    const preparedText = formatCalmEducationalText(text);
+                    const utterance = new SpeechSynthesisUtterance(preparedText);
+                    window.activeUtteranceRef = utterance;
+                    utteranceGcKeeper.push(utterance);
+                    if (utteranceGcKeeper.length > 12) utteranceGcKeeper.shift();
+
+                    if (roleVoice) {
+                        utterance.voice = roleVoice;
+                        utterance.lang = roleVoice.lang || 'en-US';
+                    } else {
+                        utterance.lang = 'en-US';
+                    }
+
+                    // تنويع طفيف في النبرة والسرعة حسب المتحدث
+                    if (role === 'narrator') {
+                        utterance.rate = Math.max(0.78, currentSpeechRate);
+                        utterance.pitch = 0.94;
+                    } else if (role === 'dad') {
+                        utterance.rate = Math.max(0.80, currentSpeechRate);
+                        utterance.pitch = 0.86;
+                    } else if (role === 'boy1') {
+                        utterance.rate = Math.min(0.95, currentSpeechRate + 0.08);
+                        utterance.pitch = 1.06;
+                    } else if (role === 'girl2') {
+                        utterance.rate = Math.min(0.95, currentSpeechRate + 0.08);
+                        utterance.pitch = 1.14;
+                    } else {
+                        utterance.rate = Math.min(0.92, currentSpeechRate + 0.05);
+                        utterance.pitch = 1.05;
+                    }
+                    utterance.volume = 1.0;
+
+                    let finished = false;
+                    const done = () => {
+                        if (finished || sessionId !== currentSpeechSessionId) return;
+                        finished = true;
+                        if (onFinished) onFinished();
+                    };
+
+                    utterance.onend = done;
+                    utterance.onerror = (err) => {
+                        if (finished || sessionId !== currentSpeechSessionId) return;
+                        if (err && (err.error === 'canceled' || err.error === 'interrupted')) return;
+                        finished = true;
+                        playCloudBackupTts(text, currentSpeechRate, onFinished);
+                    };
+
+                    window.speechSynthesis.resume();
+                    window.speechSynthesis.speak(utterance);
+                }, 50);
+                activeTimeouts.push(startTimer);
+            } else {
+                playCloudBackupTts(text, currentSpeechRate, onFinished);
+            }
+        }
+
+        function speakSentenceWithLockedVoice(text, onFinished) {
+            currentSpeechSessionId++;
+            const sessionId = currentSpeechSessionId;
+
+            if ('speechSynthesis' in window) {
+                try {
+                    window.speechSynthesis.cancel();
+                    window.speechSynthesis.resume();
+                } catch (e) {}
+
+                const startTimer = setTimeout(() => {
+                    if (sessionId !== currentSpeechSessionId) return;
+
+                    populateVoiceList();
+                    const bestVoice = lockedNativeVoice || findBestRoutineVoice(window.speechSynthesis.getVoices());
+
+                    const preparedText = formatCalmEducationalText(text);
+                    const utterance = new SpeechSynthesisUtterance(preparedText);
+                    window.activeUtteranceRef = utterance;
+                    utteranceGcKeeper.push(utterance);
+                    if (utteranceGcKeeper.length > 10) utteranceGcKeeper.shift();
+
+                    if (bestVoice) {
+                        utterance.voice = bestVoice;
+                        utterance.lang = bestVoice.lang || 'en-US';
+                    } else {
+                        utterance.lang = 'en-US';
+                    }
+
+                    utterance.rate = currentSpeechRate;
+                    utterance.pitch = 1.0;
+                    utterance.volume = 1.0;
+
+                    let finished = false;
+                    const done = () => {
+                        if (finished || sessionId !== currentSpeechSessionId) return;
+                        finished = true;
+                        if (onFinished) onFinished();
+                    };
+
+                    utterance.onend = done;
+                    utterance.onerror = (err) => {
+                        if (finished || sessionId !== currentSpeechSessionId) return;
+                        if (err && (err.error === 'canceled' || err.error === 'interrupted')) return;
+                        finished = true;
+                        playCloudBackupTts(text, currentSpeechRate, onFinished);
+                    };
+
+                    window.speechSynthesis.resume();
+                    window.speechSynthesis.speak(utterance);
+                }, 60);
+                activeTimeouts.push(startTimer);
+            } else {
+                playCloudBackupTts(text, currentSpeechRate, onFinished);
+            }
+        }
+
+        function resetAllHighlights() {
+            currentSpeechSessionId++;
+            activeTimeouts.forEach(t => clearTimeout(t));
+            activeTimeouts = [];
+
+            if ('speechSynthesis' in window && (window.speechSynthesis.speaking || window.speechSynthesis.pending)) {
+                try { window.speechSynthesis.cancel(); } catch (e) {}
+            }
+            if (currentAudioPlayer) {
+                currentAudioPlayer.pause();
+                currentAudioPlayer = null;
+            }
+
+            document.querySelectorAll('.static-attractive-highlight').forEach(el => {
+                el.classList.remove('static-attractive-highlight');
+            });
+            hideToast();
+        }
+
+        function toggleSpeechRate() {
+            const display = document.getElementById('speedDisplay');
+            if (currentSpeechRate === 0.78) {
+                currentSpeechRate = 0.70;
+                if (display) display.innerText = 'بطيء ومفصل (0.70x)';
+            } else if (currentSpeechRate === 0.70) {
+                currentSpeechRate = 0.86;
+                if (display) display.innerText = 'طبيعي معتدل (0.86x)';
+            } else {
+                currentSpeechRate = 0.78;
+                if (display) display.innerText = 'هادئ وتعليمي (0.78x)';
+            }
+        }
+
+        function showToast(text) {
+            const toast = document.getElementById('liveReadingToast');
+            const toastText = document.getElementById('toastWord');
+            if (toastText) toastText.innerText = text;
+            if (toast) {
+                toast.classList.remove('opacity-0', 'translate-y-8');
+                toast.classList.add('opacity-100', 'translate-y-0');
+            }
+        }
+
+        function hideToast() {
+            const toast = document.getElementById('liveReadingToast');
+            if (toast) {
+                toast.classList.add('opacity-0', 'translate-y-8');
+                toast.classList.remove('opacity-100', 'translate-y-0');
+            }
+        }
+
+        window.onload = async function() {
+            await loadAllMediaFromStorage();
+            renderEx1Questions();
+            updateEx2Translation();
+            populateVoiceList();
+
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.onvoiceschanged = () => {
+                    populateVoiceList();
+                };
+            }
+        };
+    </script>
+</body>
+</html>
